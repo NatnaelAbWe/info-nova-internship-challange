@@ -14,7 +14,7 @@ const Home = () => {
   // filter logic
   const filteredCourses = courses.filter((course) => {
     const search = searchItem.toLowerCase();
-    const instructorName = course.instructor || course.intstructor || "";
+    const instructorName = course.instructor || "";
 
     const matchesSearch =
       course.title.toLowerCase().includes(search) ||
