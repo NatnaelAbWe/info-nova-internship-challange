@@ -5,6 +5,7 @@ import { useCourse } from "./api/courseLoad";
 import "./styles/index.css";
 import { Navbar } from "./components/NavBar";
 import { Footer } from "./components/Footer";
+import type { Course } from "./types/courses";
 
 function App() {
   const { courses } = useCourse();
@@ -26,7 +27,7 @@ function App() {
 
 import { useParams } from "react-router-dom";
 
-const CourseDetailPageWrapper = ({ courses }) => {
+const CourseDetailPageWrapper = ({ courses }: { courses: Course[] }) => {
   const { id } = useParams();
   const course = courses.find((c) => c.id === id || c.id === Number(id));
 
