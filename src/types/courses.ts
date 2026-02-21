@@ -1,10 +1,13 @@
 export interface Course {
   id: number;
   title: string;
-  discription: string;
+  description: string;
   intstructor: string;
-  imgage?: string;
-  catagory?: string;
+  image?: string;
+  category?: string;
+  length: number;
+  people: number;
+  rating: number;
 }
 
 export interface CourseState {
