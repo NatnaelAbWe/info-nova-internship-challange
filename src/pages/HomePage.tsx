@@ -4,6 +4,7 @@ import { useCourse } from "../api/courseLoad";
 import { useState } from "react";
 import { SearchBar } from "../components/SearchBar";
 import { Navbar } from "../components/NavBar";
+import { Footer } from "../components/Footer";
 
 const Home = () => {
   const { courses, isLoading, error } = useCourse();
@@ -62,6 +63,7 @@ const Home = () => {
               ))}
         </div>
       </div>
+      <Footer />
     </main>
   );
 };

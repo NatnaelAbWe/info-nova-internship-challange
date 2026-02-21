@@ -2,6 +2,7 @@ import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import Logo from "../assets/Link.svg";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,12 +11,14 @@ export const Navbar = () => {
     <nav className="sticky top-0 z-50 w-max-7xl mx-auto border-b border-gray-100 bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-7xl items-center px-6 md:px-10">
         <div className="flex shrink-0 items-center">
-          <img
-            src={Logo}
-            alt="infnova logo"
-            className="h-8 w-auto"
-            loading="lazy"
-          />
+          <Link to="/">
+            <img
+              src={Logo}
+              alt="infnova logo"
+              className="h-8 w-auto"
+              loading="lazy"
+            />
+          </Link>
         </div>
 
         <div className="hidden flex-1 items-center justify-center gap-10 md:flex">
