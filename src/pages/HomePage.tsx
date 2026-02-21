@@ -3,6 +3,7 @@ import { SkeletonCard } from "../components/SkeletonLoading";
 import { useCourse } from "../api/courseLoad";
 import { useState } from "react";
 import { SearchBar } from "../components/SearchBar";
+import { Navbar } from "../components/NavBar";
 
 const Home = () => {
   const { courses, isLoading, error } = useCourse();
@@ -10,7 +11,7 @@ const Home = () => {
 
   const filteredCourses = courses.filter((course) => {
     const title = course.title?.toLowerCase() ?? "";
-    const instructor = course.intstructor?.toLowerCase() ?? ""; // Check spelling!
+    const instructor = course.intstructor?.toLowerCase() ?? "";
     const search = searchItem.toLowerCase();
 
     return title.includes(search) || instructor.includes(search);
@@ -18,8 +19,9 @@ const Home = () => {
 
   return (
     <main className="min-h-screen bg-gray-50">
+      <Navbar />
       {/* Hero Section */}
-      <section className="bg-[#FF6B00] py-16 px-10 text-white text-left">
+      <section className="bg-[#FF6B00] max-w-7xl py-16 px-10 text-white text-left mx-auto">
         <h1 className="text-6xl font-bold">Explore Our Courses</h1>
         <p className="mt-4 text-2xl opacity-90">
           Master new skills with expert-led courses designed for the modern{" "}
