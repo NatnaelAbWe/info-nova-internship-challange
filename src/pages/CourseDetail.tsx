@@ -6,8 +6,7 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 import StarIcon from "@mui/icons-material/Star";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
-import { Footer } from "../components/Footer";
-import { Course } from "../types/courses";
+import type { Course } from "../types/courses";
 
 export const CourseDetailPage = ({ course }: { course: Course }) => {
   useEffect(() => {
@@ -21,8 +20,7 @@ export const CourseDetailPage = ({ course }: { course: Course }) => {
       .join("")
       .toUpperCase();
 
-  const instructorName =
-    course?.intstructor || course?.intstructor || "Not  Available";
+  const instructorName = course?.instructor || "Not  Available";
 
   return (
     <div className="min-h-screen bg-white">
@@ -65,12 +63,12 @@ export const CourseDetailPage = ({ course }: { course: Course }) => {
               </div>
               <div className="flex items-center gap-2">
                 <AccessTimeIcon sx={{ fontSize: 18 }} />
-                <span>{course?.length} weeks</span>
+                <span>{course?.duration}</span>
               </div>
               <div className="flex items-center gap-2">
                 <PeopleOutlineIcon sx={{ fontSize: 18 }} />
                 <span>
-                  {(course?.people || 2015).toLocaleString()} enrolled
+                  {(course?.enrolled || 2015).toLocaleString()} enrolled
                 </span>
               </div>
               <div className="flex items-center gap-2 text-yellow-300">
@@ -179,8 +177,8 @@ export const CourseDetailPage = ({ course }: { course: Course }) => {
               Enroll Today
             </h3>
             <p className="text-gray-500 text-sm mb-8 font-medium">
-              Join {(course?.people || 2015).toLocaleString()} students already
-              enrolled
+              Join {(course?.enrolled || 2015).toLocaleString()} students
+              already enrolled
             </p>
 
             <button className="w-full bg-[#FF6B00] text-white font-bold py-4 rounded-xl hover:bg-[#e66000] transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-orange-200 mb-4">
@@ -196,7 +194,7 @@ export const CourseDetailPage = ({ course }: { course: Course }) => {
                 This course includes:
               </h4>
               {[
-                `${course?.length || 9} weeks of content`,
+                `${course?.duration} of content`,
                 "Lifetime access",
                 "Certificate of completion",
                 "Access on mobile and desktop",
@@ -217,7 +215,6 @@ export const CourseDetailPage = ({ course }: { course: Course }) => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

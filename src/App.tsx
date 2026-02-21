@@ -3,27 +3,27 @@ import Home from "./pages/HomePage";
 import { CourseDetailPage } from "./pages/CourseDetail";
 import { useCourse } from "./api/courseLoad";
 import "./styles/index.css";
+import { Navbar } from "./components/NavBar";
+import { Footer } from "./components/Footer";
 
 function App() {
   const { courses } = useCourse();
 
   return (
     <Router>
+      <Navbar />
       <Routes>
-        {/* Main Landing Page */}
         <Route path="/" element={<Home />} />
-
-        {/* Dynamic Course Page: The :id allows us to grab specific data */}
         <Route
           path="/course/:id"
           element={<CourseDetailPageWrapper courses={courses} />}
         />
       </Routes>
+      <Footer />
     </Router>
   );
 }
 
-// A simple wrapper to find the specific course based on the URL ID
 import { useParams } from "react-router-dom";
 
 const CourseDetailPageWrapper = ({ courses }) => {
