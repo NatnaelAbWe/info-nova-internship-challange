@@ -1,9 +1,10 @@
 import "./styles/index.css";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
     <>
-      <h1 className="bg-amber-500"> info nova</h1>
+      <HomePage />
     </>
   );
 }
