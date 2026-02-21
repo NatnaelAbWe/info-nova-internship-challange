@@ -3,7 +3,7 @@ export interface Course {
   title: string;
   description: string;
   intstructor: string;
-  image?: string;
+  thumbnail?: string;
   category?: string;
   length: number;
   people: number;
