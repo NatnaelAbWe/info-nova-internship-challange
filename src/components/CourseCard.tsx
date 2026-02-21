@@ -42,12 +42,12 @@ export const CourseCard = ({ course }: { course: Course }) => {
                   sx={{ fontSize: 16 }}
                   className="text-gray-300"
                 />
-                <span>{course.length} weeks</span>
+                <span>{course.duration}</span>
               </div>
 
               <div className="flex items-center gap-1.5">
                 <GroupIcon sx={{ fontSize: 16 }} className="text-gray-300" />
-                <span>{(course.people ?? 0).toLocaleString()}</span>
+                <span>{(course.enrolled ?? 0).toLocaleString()}</span>
               </div>
             </div>
 

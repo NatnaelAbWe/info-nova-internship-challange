@@ -2,12 +2,13 @@ export interface Course {
   id: number;
   title: string;
   description: string;
-  intstructor: string;
+  instructor: string;
   thumbnail?: string;
   category?: string;
-  length: number;
-  people: number;
+  duration: string;
+  enrolled: number;
   rating: number;
+  level: string;
 }
 
 export interface CourseState {
@@ -18,7 +19,9 @@ export interface CourseState {
 
 export interface SearchBarProps {
   searchItem: string;
-  setSearchItem: (value: string) => void;
-  filteredCourses: number;
-  totalCount?: number;
+  setSearchItem: (val: string) => void;
+  selectedCategory: string;
+  setSelectedCategory: (val: string) => void;
+  selectedLevel: string;
+  setSelectedLevel: (val: string) => void;
 }
