@@ -15,3 +15,10 @@ export interface CourseState {
   loading: boolean;
   error: string | null;
 }
+
+export interface SearchBarProps {
+  searchItem: string;
+  setSearchItem: (value: string) => void;
+  filteredCourses: number;
+  totalCount?: number;
+}

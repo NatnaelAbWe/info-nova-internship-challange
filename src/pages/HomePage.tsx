@@ -1,8 +1,20 @@
 import { CourseCard } from "../components/CourseCard";
 import { SkeletonCard } from "../components/SkeletonLoading";
 import { useCourse } from "../api/courseLoad";
+import { useState } from "react";
+import { SearchBar } from "../components/SearchBar";
+
 const Home = () => {
   const { courses, isLoading, error } = useCourse();
+  const [searchItem, setSearchItem] = useState("");
+
+  const filteredCourses = courses.filter((course) => {
+    const title = course.title?.toLowerCase() ?? "";
+    const instructor = course.intstructor?.toLowerCase() ?? ""; // Check spelling!
+    const search = searchItem.toLowerCase();
+
+    return title.includes(search) || instructor.includes(search);
+  });
 
   return (
     <main className="min-h-screen bg-gray-50">
@@ -15,8 +27,15 @@ const Home = () => {
           learner. Start your learning journey today with INFNOVA Academy.{" "}
         </p>
       </section>
+      {/* search bar component */}
+      <SearchBar
+        searchItem={searchItem}
+        setSearchItem={setSearchItem}
+        filteredCourses={courses.length}
+        totalCount={0}
+      />
 
-      {/* Course Grid Container */}
+      {/* Course Grid  */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="flex justify-between items-center mb-8">
           <p className="text-gray-600 font-medium">
