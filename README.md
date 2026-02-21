@@ -44,7 +44,7 @@ Enhanced UX with skeleton states while course data is being fetched.
 
 ## 🔗live Preview
 
--[click Me](https://example.com)
+-[click Me](https://info-nova-internship-challange-d3n9.vercel.app/)
 
 ---
 
