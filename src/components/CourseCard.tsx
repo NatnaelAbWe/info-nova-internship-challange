@@ -31,7 +31,7 @@ export const CourseCard = ({ course }: { course: Course }) => {
           <p className="mt-3 text-sm text-gray-500">
             Instructor:{" "}
             <span className="text-gray-900 font-semibold">
-              {course.instructor || course.intstructor}
+              {course.instructor}
             </span>
           </p>
 

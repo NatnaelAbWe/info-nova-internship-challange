@@ -30,7 +30,7 @@ const Home = () => {
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-[#FF6B00] py-20 px-6 md:px-10 text-white relative overflow-hidden">
+      <section className="bg-[#FF6B00] py-20 px-6 md:px-10 text-white relative overflow-hidden max-w-7xl mx-auto">
         <div className="max-w-7xl mx-auto relative z-10">
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
             Explore Our <span className="text-orange-200">Courses</span>
